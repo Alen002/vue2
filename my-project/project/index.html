@@ -41,11 +41,23 @@
       <!-- END of V-FOR -->
 
       <!-- V-FOR with Objects-->
-      <div id="app">
-        <p v-for="(value, key, index) in jokes" :key="value">
-          {{ index }}. {{ key }} : {{ value }}
-        </p>
-        <!-- END of V-FOR with Objects-->
+     
+      <p v-for="(value, key, index) in jokes" :key="value">
+        {{ index }}. {{ key }} : {{ value }}
+      </p>
+      <!-- END of V-FOR with Objects-->
+
+      <!-- V-ON or @ -->
+      <div class="quantity">
+        <button @click="counter > 0 ? counter -= 1 : 0">-</button>
+        <span >Quantity: {{ counter }}</span>
+        <button @click="counter += 1">+</button>
+      </div>
+      <button @click="">Submit</button>
+      <!-- END of V-ON -->
+</div>
+
+
       </div>
     </div>
     <script src="app.js"></script>

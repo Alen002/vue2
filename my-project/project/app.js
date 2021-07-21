@@ -16,5 +16,6 @@ new Vue({
       answer: `I do not know`,
       response: "silence",
     },
+    counter: 0,
   },
 });
