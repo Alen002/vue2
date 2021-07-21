@@ -10,5 +10,11 @@ new Vue({
     // v-bind
     pie: "",
     activeClass: "active",
+    // v-for objects
+    jokes: {
+      question: "What was the question",
+      answer: `I do not know`,
+      response: "silence",
+    },
   },
 });

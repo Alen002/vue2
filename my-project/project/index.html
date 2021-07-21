@@ -38,7 +38,15 @@
       <ul>
         <li v-for="number in 10" :key="number">{{ number }}</li>
       </ul>
-      <!-- END of V-FOR-->
+      <!-- END of V-FOR -->
+
+      <!-- V-FOR with Objects-->
+      <div id="app">
+        <p v-for="(value, key, index) in jokes" :key="value">
+          {{ index }}. {{ key }} : {{ value }}
+        </p>
+        <!-- END of V-FOR with Objects-->
+      </div>
     </div>
     <script src="app.js"></script>
   </body>
