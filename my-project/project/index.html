@@ -12,7 +12,18 @@
   <body>
     <div id="App">
       {{title}}
-      <li v-for="item in items">{{ item }}</li>
+      <p v-for="item in items">{{ item }}</p>
+      <p>{{message}}</p>
+
+      <!-- V-MODELS-->
+      <label for="FirstName"> FirstName</label>
+      <input v-model="checkedNames" type="checkbox" value="FirstName" />
+
+      <label for="SecondName"> SecondName</label>
+      <input v-model="checkedNames" type="checkbox" value="SecondName" />
+      <br />
+      <span>Checked names: {{ checkedNames }}</span>
+      <!-- END of V-MODEL -->
     </div>
     <script src="app.js"></script>
   </body>
