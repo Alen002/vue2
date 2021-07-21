@@ -24,6 +24,21 @@
       <br />
       <span>Checked names: {{ checkedNames }}</span>
       <!-- END of V-MODEL -->
+
+      <!-- V-BIND -->
+      <h3>What is your favorite kind of pie</h3>
+      <textarea v-model="pie"></textarea>
+
+      <br />
+      <button :class="[pie ? activeClass : '']">Let us know!</button>
+      <h5>{{activeClass}}</h5>
+      <!-- END of V-BIND -->
+
+      <!-- V-FOR -->
+      <ul>
+        <li v-for="number in 10" :key="number">{{ number }}</li>
+      </ul>
+      <!-- END of V-FOR-->
     </div>
     <script src="app.js"></script>
   </body>
