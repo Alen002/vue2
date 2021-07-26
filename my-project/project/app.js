@@ -19,5 +19,6 @@ new Vue({
     counter: 0,
     num1: 0,
     num2: 0,
+    text: "",
   },
 });
