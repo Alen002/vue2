@@ -90,8 +90,14 @@
       <div @mousemove="xCoordinate">
         <p>xCoordinate: {{x}}</p>
       </div>
-    </div>
     <!-- END of @mousemove -->
+
+    <!-- increment/decrement with methods-->
+    <h3>Increment/Decrement With Methods</h3>
+    <button @click="increment">++++</button>
+    {{counter}}
+    <button @click="decrement">----</button>
+    <!-- END of increment/decrement with methods-->
     <script src="app.js"></script>
   </body>
 </html>

@@ -23,10 +23,17 @@ new Vue({
     texting: "",
     x: 0,
     y: 0,
+    counter: 0,
   },
   methods: {
     xCoordinate(e) {
       this.x = e.clientX;
+    },
+    increment() {
+      this.counter++;
+    },
+    decrement() {
+      this.counter--;
     },
   },
 });
