@@ -17,5 +17,7 @@ new Vue({
       response: "silence",
     },
     counter: 0,
+    num1: 0,
+    num2: 0,
   },
 });

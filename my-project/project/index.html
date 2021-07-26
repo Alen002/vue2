@@ -55,6 +55,21 @@
       </div>
       <button @click="">Submit</button>
       <!-- END of V-ON -->
+
+      <!-- SUM CALCULATOR--> 
+      <div class="row">
+        <h2>SUM CALCULATOR</h2>
+        <span><input placeholder="Number" v-model.number = "num1" /></span> <!-- v-model.text -->
+        <span>+</span>
+        <span><input type="number" placeholder="Number" v-model.number = "num2" /></span>
+        <span>=</span>
+
+        <span>{{num1 + num2}}</span>
+
+
+      </div>     
+      <!-- END of CALCULATOR-->      
+      
 </div>
 
 
