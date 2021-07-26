@@ -41,7 +41,7 @@
       <!-- END of V-FOR -->
 
       <!-- V-FOR with Objects-->
-     
+
       <p v-for="(value, key, index) in jokes" :key="value">
         {{ index }}. {{ key }} : {{ value }}
       </p>
@@ -50,30 +50,26 @@
       <!-- V-ON or @ -->
       <div class="quantity">
         <button @click="counter > 0 ? counter -= 1 : 0">-</button>
-        <span >Quantity: {{ counter }}</span>
+        <span>Quantity: {{ counter }}</span>
         <button @click="counter += 1">+</button>
       </div>
       <button @click="">Submit</button>
       <!-- END of V-ON -->
 
-      <!-- SUM CALCULATOR--> 
+      <!-- SUM CALCULATOR-->
       <div class="row">
         <h2>SUM CALCULATOR</h2>
-        <span><input placeholder="Number" v-model.number = "num1" /></span> <!-- v-model.text -->
+        <span><input placeholder="Number" v-model.number="num1" /></span>
+        <!-- v-model.text -->
         <span>+</span>
-        <span><input type="number" placeholder="Number" v-model.number = "num2" /></span>
+        <span
+          ><input type="number" placeholder="Number" v-model.number="num2"
+        /></span>
         <span>=</span>
 
         <span>{{num1 + num2}}</span>
-
-
-      </div>     
-      <!-- END of CALCULATOR-->      
-      
-</div>
-
-
       </div>
+      <!-- END of CALCULATOR-->
     </div>
     <script src="app.js"></script>
   </body>
