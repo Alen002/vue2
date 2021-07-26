@@ -21,5 +21,12 @@ new Vue({
     num2: 0,
     text: "",
     texting: "",
+    x: 0,
+    y: 0,
+  },
+  methods: {
+    xCoordinate(e) {
+      this.x = e.clientX;
+    },
   },
 });
