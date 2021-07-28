@@ -5,3 +5,11 @@
 .color-mark {
   background-color: lightgreen;
 }
+
+.available {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
+}

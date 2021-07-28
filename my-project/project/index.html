@@ -33,6 +33,15 @@
       <h5>{{activeClass}}</h5>
       <!-- END of V-BIND -->
 
+      <div>
+        <h3>Data Binding</h3>
+        <!-- v-bind to an attribute, bind href attribute to some dynamic data -->
+        <a :href="website">Search Engine Link</a>
+        <div @click="available = !available" :class="{available: available}">
+          <span>V-bind Class</span>
+        </div>
+      </div>
+
       <!-- V-FOR -->
       <ul>
         <li v-for="number in 10" :key="number">{{ number }}</li>
@@ -90,14 +99,24 @@
       <div @mousemove="xCoordinate">
         <p>xCoordinate: {{x}}</p>
       </div>
-    <!-- END of @mousemove -->
+      <!-- END of @mousemove -->
 
-    <!-- increment/decrement with methods-->
-    <h3>Increment/Decrement With Methods</h3>
-    <button @click="increment">++++</button>
-    {{counter}}
-    <button @click="decrement">----</button>
-    <!-- END of increment/decrement with methods-->
+      <!-- increment/decrement with methods-->
+      <h3>Increment/Decrement With Methods</h3>
+      <button @click="increment">++++</button>
+      {{counter}}
+      <button @click="decrement">----</button>
+      <!-- END of increment/decrement with methods-->
+
+      <!-- Enter a Name and push it to an array-->
+
+      <p>
+        <li v-for="name in names">{{ name }}</li>
+      </p>
+      <input type="text" v-model="newName" @keyup.enter="addName" />
+
+      <!-- End of Enter Name -->
+    </div>
     <script src="app.js"></script>
   </body>
 </html>

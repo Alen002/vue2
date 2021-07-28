@@ -24,6 +24,10 @@ new Vue({
     x: 0,
     y: 0,
     counter: 0,
+    website: "https://duckduckgo.com",
+    available: false,
+    newName: "",
+    names: ["Bill", "Sarah"],
   },
   methods: {
     xCoordinate(e) {
@@ -34,6 +38,9 @@ new Vue({
     },
     decrement() {
       this.counter--;
+    },
+    addName() {
+      this.names.push(this.newName);
     },
   },
 });
