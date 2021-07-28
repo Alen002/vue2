@@ -144,6 +144,32 @@
         </div>
       </form>
       <!-- End of Forms-->
+
+      <!-- Sorting-->
+      <div class="sorting">
+        <button @click="ascending">Asc</button>
+        <button>Desc</button>
+        <h3>Sorting</h3>
+        <ul v-for="rating in ratings">
+          <b>Title: </b>
+          {{rating.title}} {{rating.rating}}
+        </ul>
+      </div>
+      <!-- End of Sorting-->
+
+      <!-- Computed-->
+      Enter user:
+      <input v-model.lazy="userData" />
+      Entered Value:{{userData}}<br />
+      <p>Computed Value: {{greeting}}</p>
+
+      <!-- End of Computed-->
+
+      <!-- Counter Computed-->
+      <p>counter: {{ counting }}</p>
+      <p>counter computed: {{ countupComp }}</p>
+      <button @click="countup">Increase</button>
+      <!-- End of Counter Computed-->
     </div>
     <!-- End of Vue -->
     <script src="app.js"></script>

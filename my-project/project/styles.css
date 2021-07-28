@@ -47,3 +47,10 @@ form div {
 .submitButton:hover {
   background-color: grey;
 }
+
+.sorting {
+  margin-top: 20px;
+  background-color: darkkhaki;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
