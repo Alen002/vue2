@@ -28,6 +28,10 @@ new Vue({
     available: false,
     newName: "",
     names: ["Bill", "Sarah"],
+    formName: "",
+    formEmail: "",
+    formCaps: "",
+    response: "",
   },
   methods: {
     xCoordinate(e) {
@@ -41,6 +45,21 @@ new Vue({
     },
     addName() {
       this.names.push(this.newName);
+      this.newName = "";
+    },
+    submitForm() {
+      axios
+        .post("//jsonplaceholder.typicode.com/posts", {
+          name: this.formName,
+          email: this.formEmail,
+        })
+        .then((response) => {
+          this.response = JSON.stringify(response, null, 2);
+          console.log(response);
+        })
+        .catch((error) => {
+          this.response = "Error: " + error.response.status;
+        });
     },
   },
 });

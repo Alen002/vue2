@@ -10,6 +10,7 @@
     <title>Document</title>
   </head>
   <body>
+    <!-- Start of Vue -->
     <div id="App">
       {{title}}
       <p v-for="item in items">{{ item }}</p>
@@ -111,12 +112,40 @@
       <!-- Enter a Name and push it to an array-->
 
       <p>
-        <li v-for="name in names">{{ name }}</li>
+        <li v-for="name in names" :key="name">{{ name }}</li>
       </p>
-      <input type="text" v-model="newName" @keyup.enter="addName" />
-
+      <input
+        type="text"
+        v-model="newName"
+        @keyup.enter="addName"
+        placeholder="Add a name"
+      />
       <!-- End of Enter Name -->
+
+      <!-- Forms-->
+      <h2>Submit Form</h2>
+      <form @submit="submitForm">
+        <div>
+          <label for="name">Name:</label>
+          <input id="name" type="text" v-model="formName" />
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input id="email" type="email" v-model="formEmail" required />
+        </div>
+        <div>
+          <button @click="submitForm" class="submitButton" type="submit">
+            SUBMIT
+          </button>
+        </div>
+        <div>
+          <h3>Response from server:</h3>
+          <pre>{{ response }}</pre>
+        </div>
+      </form>
+      <!-- End of Forms-->
     </div>
+    <!-- End of Vue -->
     <script src="app.js"></script>
   </body>
 </html>
