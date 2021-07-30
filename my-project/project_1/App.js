@@ -1,3 +1,8 @@
+// a simple component
+Vue.component("component-a", {
+  template: "<p>This is a simple component</p>"
+});
+
 new Vue({
   el: "#App",
   data: {
@@ -5,9 +10,10 @@ new Vue({
     customer1total: 35.43,
     number: 54,
     counter: 0,
-    message: 0,
-    result: ""
+    result: "",
+    valueChanged: ""
   },
+  /* template: "<p>This is a simple template </p>", */
   filters: {
     tip15(value) {
       return (value * 0.15).toFixed(2);
@@ -23,8 +29,11 @@ new Vue({
     }
   },
   watch: {
-    counter() {
+    /* counter() {
       return (this.result = `watching at counter ${this.counter}`);
+    } */
+    counter(newValue, oldValue) {
+      return (this.valueChanged = ` old ${oldValue} changed to ${newValue}`);
     }
   }
 });
