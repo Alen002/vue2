@@ -3,7 +3,10 @@ new Vue({
   data: {
     test: "Vue is working",
     customer1total: 35.43,
-    number: 54
+    number: 54,
+    counter: 0,
+    message: 0,
+    result: ""
   },
   filters: {
     tip15(value) {
@@ -17,6 +20,11 @@ new Vue({
     },
     multiply(value) {
       return value * 100;
+    }
+  },
+  watch: {
+    counter() {
+      return (this.result = `watching at counter ${this.counter}`);
     }
   }
 });

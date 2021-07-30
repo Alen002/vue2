@@ -19,6 +19,11 @@
       <p>25%: {{ customer1total | tip25 }}</p>
       <p>100: {{ number | multiply }}</p>
       <!-- End of Filter -->
+
+      <!-- Watcher -->
+      <input type="number" v-model.number="counter" />
+      message: {{result}}
+      <!-- End of Watcher -->
     </div>
 
     <script src="app.js"></script>
