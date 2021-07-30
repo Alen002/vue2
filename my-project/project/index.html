@@ -166,12 +166,24 @@
       <!-- End of Computed-->
 
       <!-- Counter Computed-->
-      <p>counter: {{ counting }}</p>
-      <p>counter computed: {{ countupComp }}</p>
+      <p>counter: {{counting}}</p>
+      <p>counter computed: {{countupComp}}</p>
       <button @click="countup">Increase</button>
       <!-- End of Counter Computed-->
+
+      <!-- Checkboxes-->
+      <ul>
+        <li v-for="checkbox in checkboxes">{{checkbox.text}}</li>
+      </ul>
+
+      <!-- checkboxes-->
+      <ul>
+        <li v-for="shoppingItem in shoppingItems">{{shoppingItem}}</li>
+      </ul>
+
+      <!-- checkboxes-->
+      <!-- End of Vue -->
     </div>
-    <!-- End of Vue -->
     <script src="app.js"></script>
   </body>
 </html>

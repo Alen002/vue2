@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://unpkg.com/vue"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="App">
+      {{test}}
+      <!-- Filter -->
+      <h2>Tip Calculator</h2>
+      <p><strong>Total: {{ customer1total }}</strong></p>
+      <p>15%: {{ customer1total | tip15 }}</p>
+      <p>20%: {{ customer1total | tip20 }}</p>
+      <p>25%: {{ customer1total | tip25 }}</p>
+      <p>100: {{ number | multiply }}</p>
+      <!-- End of Filter -->
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

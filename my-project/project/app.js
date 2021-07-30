@@ -57,7 +57,13 @@ new Vue({
     ],
     userData: "",
     counting: 0,
+    checkboxes: [
+      { text: "Apple", checked: true },
+      { text: "olives", checked: false },
+    ],
+    newItem: "",
   },
+  shoppingItems: ["DVD", "CD"],
   computed: {
     greeting() {
       return `This is a test, ${this.userData}`;
