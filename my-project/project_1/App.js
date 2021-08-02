@@ -1,6 +1,31 @@
 // a simple component
 Vue.component("component-a", {
-  template: "<p>This is a simple component</p>"
+  template: "<p>This is a simple component</p>",
+});
+
+Vue.component("component-name", {
+  props: {
+    firstname: {
+      type: String,
+      required: true,
+      default: "hello there", // objects and arrays need their defaults returned from a function
+    },
+    age: {
+      type: Number,
+      required: true,
+    },
+    secondname: {
+      type: String,
+      required: true,
+    },
+  },
+  template: `<div>
+      <h3>Component with multiple tags</h3>
+      <p>one</p>
+      <p>Age is {{age}}</p>
+      <p>Name is {{firstname}}</p>
+      <p>Name is {{secondname}}</p>
+    </div>`,
 });
 
 new Vue({
@@ -11,7 +36,7 @@ new Vue({
     number: 54,
     counter: 0,
     result: "",
-    valueChanged: ""
+    valueChanged: "",
   },
   /* template: "<p>This is a simple template </p>", */
   filters: {
@@ -26,7 +51,7 @@ new Vue({
     },
     multiply(value) {
       return value * 100;
-    }
+    },
   },
   watch: {
     /* counter() {
@@ -34,6 +59,6 @@ new Vue({
     } */
     counter(newValue, oldValue) {
       return (this.valueChanged = ` old ${oldValue} changed to ${newValue}`);
-    }
-  }
+    },
+  },
 });
