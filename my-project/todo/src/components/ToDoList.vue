@@ -37,11 +37,15 @@ export default {
   methods: {
     addTodo() {
       let id = this.todos.length + 1;
+      if (this.newTodo.trim() == 0) {
+        return;
+      }
       this.todos.push({
         id: this.todos.length + 1,
         title: this.newTodo,
         completed: false
       });
+      this.newTodo = ""; // reset input after user entered task
     }
   }
 };
