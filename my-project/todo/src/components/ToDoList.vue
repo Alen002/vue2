@@ -15,8 +15,9 @@
     <!-- Start of Show Tasks -->
     result: {{ newTodo }}
     <div v-for="(todo, index) in todos" :key="todo.id" class="todo-item">
-      <div>{{ todo.title }}</div>
+      <div class="todo-title">{{ todo.title }}</div>
       <div class="remove-item" @click="removeTodo(index)">&times</div>
+      <div>edit</div>
     </div>
     <!-- End of Show Tasks -->
   </div>
@@ -50,8 +51,7 @@ export default {
       this.newTodo = ""; // reset input after user entered task
     },
     removeTodo(index) {
-      alert(index);
-      this.todos.splice(index, 1); // array.splice(i, 1)
+      this.todos.splice(index, 1); // array.splice(i, 1) -> remove one item
     }
   }
 };
@@ -65,15 +65,21 @@ export default {
   border-radius: 5px;
 }
 .todo-item {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  text-align: center;
+
+  /*   justify-content: space-between;
+ */
   padding: 5px 10px 5px 10px;
 
   margin-top: 10px;
   background-color: lightgrey;
 }
 
+.todo-title {
+  text-align: left;
+}
 .remove-item:hover {
   background-color: red;
 }
