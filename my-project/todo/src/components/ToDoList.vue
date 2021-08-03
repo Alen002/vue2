@@ -8,8 +8,9 @@
       class="todo-input"
       v-model="newTodo"
       placeholder="Any tasks to do?"
+      @keyup.enter="addTodo"
     />
-    <button @click="addTask">Add Task</button>
+    <!-- <button @click="addTask">Add Task</button> -->
 
     <!-- Start of Show Tasks -->
     result: {{ newTodo }}
@@ -34,11 +35,13 @@ export default {
     };
   },
   methods: {
-    addTask() {
-      let title = this.newTodo;
+    addTodo() {
       let id = this.todos.length + 1;
-      console.log("result is  id:", id, " title: ", title);
-      this.todos.push({ id, title });
+      this.todos.push({
+        id: this.todos.length + 1,
+        title: this.newTodo,
+        completed: false
+      });
     }
   }
 };
