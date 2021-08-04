@@ -72,7 +72,8 @@ export default {
       this.todos.push({
         id: this.todos.length + 1,
         title: this.newTodo,
-        completed: false
+        completed: false,
+        editing: false
       });
       this.newTodo = ""; // reset input after user entered task
     },
@@ -80,6 +81,7 @@ export default {
       this.todos.splice(index, 1); // array.splice(i, 1) -> remove one item
     },
     editTodo(todo) {
+      // toggle edit input field with v-if="todo.editing"
       alert("edit Todo");
       if (todo.editing == true) {
         todo.editing = false;
