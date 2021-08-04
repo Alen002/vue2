@@ -17,7 +17,22 @@
     <div v-for="(todo, index) in todos" :key="todo.id" class="todo-item">
       <div class="todo-title">{{ todo.title }}</div>
       <div class="remove-item" @click="removeTodo(index)">&times</div>
-      <div>edit</div>
+      <div class="edit-item" @dblclick="editTodo(todo)">edit</div>
+      <input
+        type="text"
+        class="show-item"
+        :style="{ backgroundColor: color }"
+      />
+      <!-- hidden text field for editing -->
+      <div>
+        <input
+          type="text"
+          v-if="todo.editing"
+          class="todo-item-edit"
+          v-model="todo.title"
+        />
+        <!--  <h3 v-else>TEST SHOW RESULT</h3> -->
+      </div>
     </div>
     <!-- End of Show Tasks -->
   </div>
@@ -31,9 +46,20 @@ export default {
       rsp: "Listings",
       newTodo: "",
       todos: [
-        { id: 1, title: "Learning basic vue in progress", completed: false },
-        { id: 2, title: "basic objects overview", completed: false }
-      ]
+        {
+          id: 1,
+          title: "Learning basic vue in progress",
+          completed: false,
+          editing: false
+        },
+        {
+          id: 2,
+          title: "basic objects overview",
+          completed: false,
+          editing: false
+        }
+      ],
+      color: "yellow"
     };
   },
   methods: {
@@ -52,6 +78,14 @@ export default {
     },
     removeTodo(index) {
       this.todos.splice(index, 1); // array.splice(i, 1) -> remove one item
+    },
+    editTodo(todo) {
+      alert("edit Todo");
+      if (todo.editing == true) {
+        todo.editing = false;
+      } else {
+        todo.editing = true;
+      }
     }
   }
 };
@@ -67,12 +101,8 @@ export default {
 .todo-item {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  text-align: center;
-
-  /*   justify-content: space-between;
- */
+  text-align: right;
   padding: 5px 10px 5px 10px;
-
   margin-top: 10px;
   background-color: lightgrey;
 }
@@ -82,5 +112,17 @@ export default {
 }
 .remove-item:hover {
   background-color: red;
+}
+
+.edit-item:hover {
+  background-color: green;
+}
+
+.show-item {
+  display: none;
+}
+
+.todo-item-edit {
+  text-align: left;
 }
 </style>
