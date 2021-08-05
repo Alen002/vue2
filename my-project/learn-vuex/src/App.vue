@@ -4,8 +4,8 @@
       {{ $store.state.counter }}
     </div>
     <div class="buttons">
-      <button @click="decreaseCounter">-</button>
-      <button @click="increaseCounter">+</button>
+      <button @click="$store.commit('decreaseCounter')">-</button>
+      <button @click="$store.commit('increaseCounter')">+</button>
     </div>
   </div>
 </template>
@@ -14,16 +14,7 @@
 import store from "./store/index";
 export default {
   name: "App",
-  components: {},
-
-  methods: {
-    increaseCounter() {
-      this.counter++;
-    },
-    decreaseCounter() {
-      this.counter--;
-    }
-  }
+  components: {}
 };
 </script>
 
