@@ -17,7 +17,9 @@
     <div v-for="(todo, index) in todos" :key="todo.id" class="todo-item">
       <div class="todo-title">{{ todo.title }}</div>
       <div class="remove-item" @click="removeTodo(index)">&times</div>
-      <div class="edit-item" @dblclick="editTodo(todo)">edit</div>
+      <div class="edit-item" @click="editTodo(todo)">edit</div>
+      <!-- @dblclick -->
+
       <input
         type="text"
         class="show-item"
@@ -30,6 +32,7 @@
           v-if="todo.editing"
           class="todo-item-edit"
           v-model="todo.title"
+          @keyup.enter="editTodoChange(todo)"
         />
         <!--  <h3 v-else>TEST SHOW RESULT</h3> -->
       </div>
@@ -82,12 +85,16 @@ export default {
     },
     editTodo(todo) {
       // toggle edit input field with v-if="todo.editing"
-      alert("edit Todo");
+      console.log("edit Todo");
       if (todo.editing == true) {
         todo.editing = false;
       } else {
         todo.editing = true;
       }
+    },
+    editTodoChange(todo) {
+      console.log("title changed");
+      title: this.todo.title;
     }
   }
 };
