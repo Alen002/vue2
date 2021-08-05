@@ -15,7 +15,7 @@ import store from "@/store/index";
 export default {
   computed: {
     products() {
-      return store.state.products;
+      return store.getters.availableProducts; // state.products
     }
   }, // return products from the state
   /* data() {

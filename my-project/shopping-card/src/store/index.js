@@ -9,7 +9,11 @@ export default new Vuex.Store({
     // = data
     products: [] // products array to make it available to ALL components
   },
-  getters: { productsCount() {} }, // getters are equivalent to computed properties
+  getters: {
+    availableProducts(state, getters) {
+      return state.products.filter(product => product.inventory > 0);
+    }
+  }, // getters are equivalent to computed properties
   actions: {
     // same as methods
     // with actions you never update state. This is done with mutations
