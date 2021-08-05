@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="counter">
-      {{ counter }}
+      {{ $store.state.counter }}
     </div>
     <div class="buttons">
       <button @click="decreaseCounter">-</button>
@@ -11,14 +11,10 @@
 </template>
 
 <script>
+import store from "./store/index";
 export default {
   name: "App",
   components: {},
-  data() {
-    return {
-      counter: 0
-    };
-  },
 
   methods: {
     increaseCounter() {
