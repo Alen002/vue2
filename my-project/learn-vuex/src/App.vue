@@ -4,7 +4,9 @@
       {{ $store.state.counter }}
     </div>
     <div class="buttons">
-      <button @click="$store.commit('decreaseCounter')">-</button>
+      <!-- trigger the commit mutation -->
+      <button @click="$store.dispatch('decreaseCounter')">-</button>
+      <!-- trigger the dispatch action -->
       <button @click="$store.dispatch('increaseCounter')">+</button>
     </div>
   </div>

@@ -8,24 +8,34 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: { counter: 0 },
   mutations: {
+    // randomNumber obtained payload from commit("increaseCounter", res.data)
     increaseCounter(state, randomNumber) {
-      state.counter++;
+      /* state.counter++; */
       console.log("random number:", randomNumber);
       state.counter += randomNumber;
     },
-    decreaseCounter(state) {
-      state.counter--;
+    decreaseCounter(state, randomNumber) {
+      /* state.counter--; */
+      state.counter -= randomNumber;
     }
   },
   actions: {
+    // for API calls, for asynchronous code, data cannot be changed with actions
     increaseCounter({ commit }) {
-      /*       console.log("increase counter (action)");
-       */ axios(
+      /* console.log("increase counter (action)"); */
+      axios(
         "https://www.random.org/integers/?num=1&min=1&max=6&col=1&base=10&format=plain&rnd=new"
       ).then(res => {
-        /*         console.log("res:", res);
-         */
-        commit("increaseCounter", res.data);
+        /* console.log("res:", res); */
+        commit("increaseCounter", res.data); // commit API data res.Data as a payload to increaseCounter mutation
+        // send payload to mutation
+      });
+    },
+    decreaseCounter({ commit }) {
+      axios(
+        "https://www.random.org/integers/?num=1&min=1&max=6&col=1&base=10&format=plain&rnd=new"
+      ).then(res => {
+        commit("decreaseCounter", res.data);
       });
     }
   },
