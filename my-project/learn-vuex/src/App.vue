@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <div class="counter" :style="{ color: $store.state.colorCode }">
+    <!-- In Counter.vue <div class="counter" :style="{ color: $store.state.colorCode }">
       {{ $store.state.counter }}
-    </div>
+    </div> -->
+    <Counter />
     <div class="counter-squared">
       {{ $store.state.counter }}
       <sup>2 </sup> = {{ $store.getters.counterSquare }}
@@ -23,8 +24,11 @@
 
 <script>
 import store from "./store/index";
+/* import Counter from "./components/Counter.vue"; */
+
 export default {
   name: "App",
+
   computed: {
     colorCode: {
       get() {
@@ -34,7 +38,8 @@ export default {
         this.$store.commit("setColorCode", newValue); // pass along the mutation and the payload
       }
     }
-  }
+  },
+  components: { Counter: require("@/components/Counter.vue").default }
 };
 </script>
 
