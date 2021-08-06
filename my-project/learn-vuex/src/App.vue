@@ -17,7 +17,7 @@
     <input placeholder="Enter color code" type="text" v-model="colorCode" />
 
     <!-- we do not use v-model here like v-model="$store.state.colorCode"
-         we will istead use a computed property named colorCode -->
+         we will instead use a computed property named colorCode -->
   </div>
 </template>
 
