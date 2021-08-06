@@ -3,6 +3,10 @@
     <div class="counter">
       {{ $store.state.counter }}
     </div>
+    <div class="counter-squared">
+      {{ $store.state.counter }}
+      <sup>2 </sup> = {{ $store.getters.counterSquare }}
+    </div>
     <div class="buttons">
       <!-- trigger the commit mutation -->
       <button @click="$store.dispatch('decreaseCounter')">-</button>

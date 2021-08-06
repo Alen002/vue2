@@ -39,5 +39,9 @@ export default new Vuex.Store({
       });
     }
   },
-  modules: {}
+  getters: {
+    counterSquare(state) {
+      return state.counter * state.counter;
+    }
+  }
 });
