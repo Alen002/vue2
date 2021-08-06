@@ -14,8 +14,10 @@
       <button @click="$store.dispatch('increaseCounter')">+</button>
     </div>
     <!-- Input field to enter a color -->
-    <input placeholder="Enter color code" type="text" />
-    <!-- we do not use v-model here like v-model="$store.state.colorCode" -->
+    <input placeholder="Enter color code" type="text" v-model="colorCode" />
+
+    <!-- we do not use v-model here like v-model="$store.state.colorCode"
+         we will istead use a computed property named colorCode -->
   </div>
 </template>
 
@@ -23,7 +25,16 @@
 import store from "./store/index";
 export default {
   name: "App",
-  components: {}
+  computed: {
+    colorCode: {
+      get() {
+        return this.$store.state.colorCode;
+      },
+      set(newValue) {
+        this.$store.commit("setColorCode", newValue); // pass along the mutation and the payload
+      }
+    }
+  }
 };
 </script>
 

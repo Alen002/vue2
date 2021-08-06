@@ -3,7 +3,7 @@ import Vuex from "vuex";
 import axios from "axios";
 import { random } from "lodash";
 
-Vue.use(Vuex);
+Vue.use(Vuex); // provides the $store to components
 
 export default new Vuex.Store({
   state: { counter: 0, colorCode: "blue" },
@@ -17,7 +17,10 @@ export default new Vuex.Store({
     decreaseCounter(state, randomNumber) {
       /* state.counter--; */
       state.counter -= randomNumber;
-    }
+    },
+    setColorCode(state, newValue) {
+      state.colorCode = newValue;
+    } // newValue -> the payload we are sending from computed colorCode
   },
   actions: {
     // for API calls, for asynchronous code, data cannot be changed with actions
