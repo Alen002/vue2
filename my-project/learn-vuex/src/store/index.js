@@ -6,7 +6,7 @@ import { random } from "lodash";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: { counter: 0 },
+  state: { counter: 0, colorCode: "blue" },
   mutations: {
     // randomNumber obtained payload from commit("increaseCounter", res.data)
     increaseCounter(state, randomNumber) {

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="counter">
+    <div class="counter" :style="{ color: $store.state.colorCode }">
       {{ $store.state.counter }}
     </div>
     <div class="counter-squared">
@@ -13,6 +13,9 @@
       <!-- trigger the dispatch action -->
       <button @click="$store.dispatch('increaseCounter')">+</button>
     </div>
+    <!-- Input field to enter a color -->
+    <input placeholder="Enter color code" type="text" />
+    <!-- we do not use v-model here like v-model="$store.state.colorCode" -->
   </div>
 </template>
 
